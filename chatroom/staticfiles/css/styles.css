@@ -1,0 +1,106 @@
+body {
+    background-color: #21262e; /* Replace with your desired color */
+}
+
+#background-section{
+    background-color: #8ea1c1;
+}
+
+.custom-navbar {
+    background-color: #4ab764; /* Replace with your desired color code */
+  }
+
+  .custom-card{
+    background-color: #4ab764;
+  }
+
+  .form-field{
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none; /* To remove the focus border */
+    background-color: transparent; /* Optional: To make the background transparent */
+    padding: 5px 0; /* Optional: To add some padding */
+    width: 70%;
+    color: #ffffff
+  }
+
+  .form-login{
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none; /* To remove the focus border */
+    background-color: transparent; /* Optional: To make the background transparent */
+    padding: 5px 0; /* Optional: To add some padding */
+    width: 90%;
+    color: #ffffff
+  }
+
+  .text-color{
+    color: #ffffff
+  }
+
+  .alt-text-color{
+    color: #4ab764
+  }
+
+  /* Custom styles for the sign-up button */
+button[type="submit"] {
+    background-color: #4ab764; /* Set the button background color to green */
+    color: black; /* Set the button text color to white */
+    border: none; /* Remove the button border */
+    padding: 10px 40px; /* Add padding to the button to adjust its size */
+    border-radius: 50px; /* Set the border-radius to make the button oval-shaped */
+    cursor: pointer; /* Change the cursor to a pointer when hovering over the button */
+    display: inline-block;
+}
+
+.login-link{
+    margin-left: 10px;
+    color: #4ab764;
+    display: inline-block;
+}
+
+h6 {
+    display: inline-block; /* Set the "OR" text to display as an inline block */
+    margin: 0 50px; /* Add some horizontal margin to create space between the button and the text */
+    color: white
+}
+
+.content-field {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px;
+    height: 150px;
+    color: black; /* Set the text color to black for better visibility */
+}
+
+.typewriter h1 {
+    overflow: hidden; /* Hide overflowing text */
+    border-right: 0.15em solid white; /* Add a blinking cursor effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 0;
+    letter-spacing: 0.15em; /* Adjust letter spacing for a typewriter-like feel */
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation-fill-mode: forwards; /* Stop animation at the last frame */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 200px; /* Adjust the margin to move the text down */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 43%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}

@@ -1,0 +1,43 @@
+<!-- login.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 my-4">
+            <br>
+            <br>
+            <img src="{% static '/media/teamwork.png' %}" width="400" height="400">
+        </div>
+        <div class="col-md-6 my-4">
+            <br>
+            <br>
+            <br>
+            <h1 class="text-color"> Login Here</h1>
+            <br>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username }} <!-- Render the username field -->
+                </div>
+                <div class="form-group">
+                    {{ form.password }} <!-- Render the password field -->
+                </div>
+                <button type="submit">Log In</button><h6> OR </h6>
+                <a href="{% url 'signup' %}" class="login-link">Sign up here</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+{% endif %}
+
+{% endblock %}
+

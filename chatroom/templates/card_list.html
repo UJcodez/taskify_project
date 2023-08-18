@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<html>  
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+      <div class="container">
+        <br>
+        <h1 class="text-color text-center">My Tasks</h1>
+        <br>
+        <div class="row">
+            {% for card in cards %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body custom-navbar">
+                            <h5 class="card-title">{{ card.title }}</h5>
+                            <p class="card-text">{{ card.date }}</p>
+                            <p class="card-text">{{ card.content }}</p>
+                            <form method="post" action="{% url 'delete_card' card.id %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-danger">Delete</button>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><br><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+{% endblock %}
+
